@@ -1,10 +1,19 @@
 # types-statresult
 
+[![Pyhton](https://img.shields.io/badge/python-3.14-blue?logoColor=yellow)](https://python.org)
+[![Poetry](https://img.shields.io/badge/packaging-poetry-%233B82F6?logo=poetry)](https://python-poetry.org/)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://pre-commit.com/)
+
+---
+
+extract stub file for `os.stat_result` with create protocol with refined type hints.
+
 ## Example
 
 ```python
-from types_statresult import refactor_statresult, black_fmt
 from pathlib import Path
+
+from types_statresult import refactor_statresult, black_fmt
 
 
 def create_statresult(filename: str) -> int:

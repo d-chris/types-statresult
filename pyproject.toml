@@ -8,6 +8,15 @@ version = "0.1.0"
 description = "creates type stubs for os.stat_result"
 authors = [ "Christoph Dörrer <d-chris@web.de>" ]
 readme = "README.md"
+license = "MIT"
+classifiers = [
+  "Programming Language :: Python :: 3.14",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[tool.poetry.urls]
+repository = "https://github.com/d-chris/types-statresult"
 
 [tool.poetry.dependencies]
 python = "^3.14"
