@@ -6,9 +6,6 @@ from pathlib import Path
 import astor
 import black
 
-if t.TYPE_CHECKING:
-    import os
-
 
 def get_code() -> str:
     """Get the code from the mypy.typeshed.stdlib.os module stub file."""
@@ -120,18 +117,21 @@ def get_statresult(code: str) -> str:
     return generated_code.strip()
 
 
-def refactor_statresult(code: str, refactor: t.Callable[[str, str], str]) -> str:
+def refactor_statresult(refactor: t.Callable[[str, str], str]) -> str:
     """
     Parse code and refactor type hints for properties in the stat_result class.
 
     Args:
-        code: Python source code to refactor
         refactor: Callback function that takes (name, type) and returns new type
 
     Returns:
         Refactored code with updated type hints
     """
-    tree = ast.parse(code)
+    tree = ast.parse(
+        get_statresult(
+            get_code(),
+        )
+    )
 
     # Find the stat_result class
     stat_result_class = next(
@@ -180,32 +180,6 @@ def refactor_statresult(code: str, refactor: t.Callable[[str, str], str]) -> str
     return astor.to_source(tree).strip()
 
 
-def create_ostypes(filename: t.Union[str, os.PathLike]) -> int:
-    code = get_code()
-    code = get_statresult(code)
-
-    def ref(name: str, hint: str) -> str:
-        if name.endswith("time"):
-            return "TimeInt"
-        elif name == "st_size":
-            return "ByteInt"
-
-        return hint
-
-    code = refactor_statresult(code, ref)
-
-    code = black.format_str(code, mode=black.Mode())
-
-    code = "\n".join(
-        [
-            "import sys",
-            "import typing",
-            "",
-            "from pathlibutil.types import ByteInt, TimeInt",
-            "",
-            "",
-            code,
-        ]
-    )
-
-    return Path(filename).write_text(code, encoding="utf-8")
+def black_fmt(code: str, **kwargs) -> str:
+    """Format code using black."""
+    return black.format_str(code, mode=black.Mode(**kwargs))

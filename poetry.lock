@@ -204,24 +204,6 @@ files = [
 dev = ["black", "build", "mypy", "pytest", "pytest-cov", "setuptools", "tox", "twine", "wheel"]
 
 [[package]]
-name = "typer-slim"
-version = "0.20.0"
-description = "Typer, build great CLIs. Easy to code. Based on Python type hints."
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "typer_slim-0.20.0-py3-none-any.whl", hash = "sha256:f42a9b7571a12b97dddf364745d29f12221865acef7a2680065f9bb29c7dc89d"},
-    {file = "typer_slim-0.20.0.tar.gz", hash = "sha256:9fc6607b3c6c20f5c33ea9590cbeb17848667c51feee27d9e314a579ab07d1a3"},
-]
-
-[package.dependencies]
-click = ">=8.0.0"
-typing-extensions = ">=3.7.4.3"
-
-[package.extras]
-standard = ["rich (>=10.11.0)", "shellingham (>=1.3.0)"]
-
-[[package]]
 name = "typing-extensions"
 version = "4.15.0"
 description = "Backported and Experimental Type Hints for Python 3.9+"
@@ -235,4 +217,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.14"
-content-hash = "90716de83db9e8a51ac695ae31b2c2eebd5d195cfe9e0735dd6b18b93266e625"
+content-hash = "079e6d78101a8ca0d7fe410d995c64c9cba4c78a82575e045b0b512b1413d38b"

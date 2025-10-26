@@ -5,7 +5,7 @@ requires = [ "poetry-core" ]
 [tool.poetry]
 name = "types-statresult"
 version = "0.1.0"
-description = ""
+description = "creates type stubs for os.stat_result"
 authors = [ "Christoph Dörrer <d-chris@web.de>" ]
 readme = "README.md"
 
@@ -14,7 +14,3 @@ python = "^3.14"
 mypy = ">=1.18.2"
 astor = ">=0.8.1"
 black = ">=25.9.0"
-typer-slim = ">=0.20.0"
-
-[tool.poetry.scripts]
-statresult = "types_statresult.__main__:app"
