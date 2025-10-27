@@ -1,6 +1,6 @@
 # types-statresult
 
-[![Python](https://img.shields.io/badge/python-3.14-blue?logoColor=yellow)](https://python.org)
+[![Python](https://img.shields.io/badge/python-3.10&#124;3.11&#124;3.12&#124;3.13&#124;3.14-blue?logoColor=yellow)](https://python.org)
 [![Poetry](https://img.shields.io/badge/packaging-poetry==1.8.5-%233B82F6?logo=poetry)](https://python-poetry.org/)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://pre-commit.com/)
 

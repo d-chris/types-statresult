@@ -19,7 +19,7 @@ classifiers = [
 repository = "https://github.com/d-chris/types-statresult"
 
 [tool.poetry.dependencies]
-python = "^3.14"
+python = "^3.10"
 mypy = ">=1.18.2"
 astor = ">=0.8.1"
 black = ">=25.9.0"
