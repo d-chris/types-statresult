@@ -1,12 +1,13 @@
 # types-statresult
 
-[![Pyhton](https://img.shields.io/badge/python-3.14-blue?logoColor=yellow)](https://python.org)
-[![Poetry](https://img.shields.io/badge/packaging-poetry-%233B82F6?logo=poetry)](https://python-poetry.org/)
+[![Python](https://img.shields.io/badge/python-3.14-blue?logoColor=yellow)](https://python.org)
+[![Poetry](https://img.shields.io/badge/packaging-poetry==1.8.5-%233B82F6?logo=poetry)](https://python-poetry.org/)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://pre-commit.com/)
 
 ---
 
-extract stub file for `os.stat_result` with create protocol with refined type hints.
+Extracts stub from mypy for `os.stat_result` to create a new protocol class to use as a type hint.
+Refactor return types of attributes using a user-defined callback.
 
 ## Example
 
@@ -17,11 +18,12 @@ from types_statresult import refactor_statresult, black_fmt
 
 
 def create_statresult(filename: str) -> int:
+    """fetches os.stat_result and refactors its attribute types."""
 
-    def refactor(name: str, type: str) -> str:
-        if name.endswith("time"):
+    def refactor(attr: str, type: str) -> str:
+        if attr.endswith("time"):
             return "TimeInt"
-        elif name == "st_size":
+        elif attr == "st_size":
             return "ByteInt"
 
         return type

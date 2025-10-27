@@ -140,11 +140,7 @@ def refactor_statresult(refactor: t.Callable[[str, str], str]) -> str:
             for node in tree.body
             if isinstance(node, ast.ClassDef) and node.name == "stat_result"
         ),
-        None,
     )
-
-    if stat_result_class is None:
-        return astor.to_source(tree)
 
     # Helper function to refactor properties recursively
     def refactor_properties(body_items):
@@ -173,8 +169,9 @@ def refactor_statresult(refactor: t.Callable[[str, str], str]) -> str:
                 refactor_properties(item.body)
                 refactor_properties(item.orelse)
 
-    # Refactor properties in the stat_result class
-    refactor_properties(stat_result_class.body)
+    if callable(refactor):
+        # Refactor properties in the stat_result class
+        refactor_properties(stat_result_class.body)
 
     # Use astor for consistent code generation
     return astor.to_source(tree).strip()
