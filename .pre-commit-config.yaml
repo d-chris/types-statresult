@@ -55,3 +55,7 @@ repos:
     rev: 1.7.0
     hooks:
       - id: tox-ini-fmt
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.8
+    hooks:
+      - id: actionlint
