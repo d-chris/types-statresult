@@ -2,8 +2,7 @@
 
 [![Python](https://img.shields.io/badge/python-3.10&#124;3.11&#124;3.12&#124;3.13&#124;3.14-blue?logoColor=yellow)](https://python.org)
 [![Poetry](https://img.shields.io/badge/packaging-poetry==1.8.5-%233B82F6?logo=poetry)](https://python-poetry.org/)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://pre-commit.com/)
-
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/d-chris/types-statresult/main.svg)](https://results.pre-commit.ci/latest/github/d-chris/types-statresult/main)
 ---
 
 Extracts stub from mypy for `os.stat_result` to create a new protocol class to use as a type hint.
