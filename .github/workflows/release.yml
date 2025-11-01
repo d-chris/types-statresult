@@ -1,4 +1,4 @@
-name: Bump Version and Release
+name: Create Release
 on:
   push:
     tags:
@@ -19,8 +19,8 @@ jobs:
         run: |
           POETRY_VERSION=$(poetry version --short)
           TAG_VERSION=${GITHUB_REF_NAME#v}
-          echo "Poetry version: $POETRY_VERSION"
-          echo "Tag version: $TAG_VERSION"
+          echo "Package version: $POETRY_VERSION"
+          echo "Tag: $TAG_VERSION"
           if [ "$POETRY_VERSION" != "$TAG_VERSION" ]; then
             exit 1
           fi
