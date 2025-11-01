@@ -4,7 +4,7 @@ requires = [ "poetry-core" ]
 
 [tool.poetry]
 name = "types-statresult"
-version = "0.1.0"
+version = "0.1.1"
 description = "creates type stubs for os.stat_result"
 authors = [ "Christoph Dörrer <d-chris@web.de>" ]
 readme = "README.md"
